@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Basics 2</title>
+		<meta name="description" content="JQuery UI Assignment - 07/01/14 - Basics 2">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#warning, #dialog, #dialog2').hide();
+				$(document).on('click','#submit',function(){
+					if($('#name').val==="Name") {
+						$("#dialog").dialog();
+						$('#warning').fadeIn( 1000 );
+						$('#warning').fadeOut( 1000 );
+						$('#warning').fadeIn( 1000 );
+					} else if ($('from').val==null || $('to').val==null) {
+						$("#dialog").dialog();
+					} else {
+						$("#nhold").append($('#name').val());
+						$("#fdate").append($('#from').val());
+						$("#tdate").append($('#to').val());
+						$("#dialog2").dialog();
+					};
+				});
+			});	
+			$(function() {
+				$( "#from" ).datepicker({numberOfMonths: 3, showButtonPanel: true, minDate: "+1w", maxDate: "+2y"});
+			});
+			$(function() {
+				$( "#to" ).datepicker({numberOfMonths: 3, showButtonPanel: true, minDate: "+1w", maxDate: "+2y"});
+			});
+			
+
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<div id="dialog" title="Alert">
+  				<p>Please enter your information.</p>
+				</div>
+				<div id="dialog2" title="Let's plan your cruise!">
+				<p>Thanks <span id="nhold"></span>! Your cruise leaves on <span id="fdate"></span> and returns on <span id="tdate"></span>!</p>
+				</div>
+				<h1>Welcome to the Coding Dojo Plan-a-Cruise App!</h1>
+				<label>Name: <input type="text" value="Name" id="name"><span id="warning">Please enter your name!</span></label>
+				<label>From: <input type="text" id="from"></label>
+				<label>To: <input type="text" id="to"></label>
+				<label><input type="submit" value="Check Dates!" id="submit"></label>
+			</div><!-- container -->
+		</div><!-- wrapper -->
+	</body>
+</html>

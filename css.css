@@ -1,0 +1,25 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+h1{
+	text-align: center;
+}
+label{
+	display: block;
+	width: 400px;
+	margin: 20px auto;
+}
+#wrapper{
+	width: 100%;
+	height: 100%;
+	background-color: 
+}
+#container{
+	position: relative;
+	width: 1000px;
+	margin: 0px auto;
+}
+#warning{
+	color: red;
+}
